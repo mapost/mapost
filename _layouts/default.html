@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Marios Apostolou</title>
+    <title>{{ page.title }}</title>
     <!-- link to main stylesheet -->
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
@@ -22,18 +22,9 @@
             </nav>
 
             <div class="container">
-            <div class="blurb">
-                    <h1 class="name"> Marios Apostolou</h1>
-                           
-                        <p class="bio">
-                An experienced Analyst/Engineer with a diverse background in Systems Administration, 
-                Information Security Governance, Cyber-security and Quality Assurance.
-        
-                My primary interests are DevSecOps, Application Security, the Defensible Security Architecture
-                and Cyber Threat Intelligence.
-                        </p>
-
-            </div><!-- /.blurb -->
+              
+            {{ content }}
+            
             </div><!-- /.container -->
 
             <footer>
