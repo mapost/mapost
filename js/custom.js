@@ -1,13 +1,13 @@
 (function($) {
 
     "use strict";
-	
+
 	$(window).on("load", function() {
-	
+
         /* ----------------------------------------------------------- */
 		/*  PRELOADER ANIMATION
 		/* ----------------------------------------------------------- */
-	
+
 		var pageTransitionAnimationDuration = 500
 		var preloader = $(".preloader");
 		pageTransition({
@@ -30,7 +30,7 @@
 				preloader.addClass('loaded');
 			}
 		});
-		
+
 		/* ----------------------------------------------------------- */
         /*  TEXT ROTATOR ANIMATION
         /* ----------------------------------------------------------- */
@@ -39,15 +39,15 @@
 				 animationType: "clip"
 			});
 		}
-		
+
 	});
 
     jQuery(document).ready(function($) {
-		
+
 		/* ----------------------------------------------------------- */
         /*  STRETCHY NAVIGATION
         /* ----------------------------------------------------------- */
-		
+
 		if ($(".cd-stretchy-nav").length > 0) {
 			var n = $(".cd-stretchy-nav");
 			n.each(function() {
@@ -69,7 +69,7 @@
 				$(".cd-stretchy-nav").removeClass('lighter');
 			}
 		});
-		
+
 		$("body.light.dark-header .link-portfolio-one, body.light.dark-header .link-portfolio-two").on('click', function() {
 			$(".cd-stretchy-nav").removeClass('lighter');
 		});
@@ -79,7 +79,7 @@
 		/* ----------------------------------------------------------- */
         /*  LINK TO ABOUT SECTION
         /* ----------------------------------------------------------- */
- 
+
 		$(".link-portfolio-one").on("click", function(e) {
 			var tabNum = $(this).index();
 			var nthChild = tabNum + 3;
@@ -89,11 +89,11 @@
 			$(".stretchy-nav li:nth-child(2)").addClass("active");
 			 e.preventDefault();
         });
-		
+
 		/* ----------------------------------------------------------- */
         /*  LINK TO PORTFOLIO SECTION
         /* ----------------------------------------------------------- */
-		
+
 		$(".link-portfolio-two").on("click", function(e) {
 			var tabNum = $(this).index();
 			var nthChild = tabNum + 3;
@@ -103,7 +103,7 @@
 			$(".stretchy-nav li:nth-child(3)").addClass("active");
 			 e.preventDefault();
         });
-		
+
         /* ----------------------------------------------------------- */
         /*  AJAX CONTACT FORM
         /* ----------------------------------------------------------- */
@@ -156,7 +156,7 @@
                 checkScreenSize();
             }, 250);
         });
-		
+
 		/* ----------------------------------------------------------- */
         /*  STOP VIDEOS WHEN CLICK DETECTED ON MENU LINKS
         /* ----------------------------------------------------------- */
@@ -168,11 +168,11 @@
 			}
 			$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 		}
-		
+
 		/* ----------------------------------------------------------- */
         /*  MAIN NAVIGATION MENU
         /* ----------------------------------------------------------- */
- 
+
         // MAIN NAVIGATION MENU
         $(".navigation > li, .stretchy-nav > li").on("click", function(e) {
             if (!$(this).hasClass("active")) {
@@ -187,7 +187,7 @@
             }
 			e.preventDefault();
 			if (($('.project-info-container').hasClass('slide-in')) && ($(window).width() > 1024)){
-				setTimeout(function(){ 
+				setTimeout(function(){
 					$('.project-info-container').removeClass('slide-in');
 				$('.close-project').removeClass('is-visible');
 				if( is_firefox ) {
@@ -199,14 +199,14 @@
 					$('.portfolio-container').removeClass('overflow-hidden');
 				}
 				}, 600);
-				
+
 			}
         });
-		
+
 		/* ----------------------------------------------------------- */
         /*  SHOW/HIDE SECTIONS
         /* ----------------------------------------------------------- */
-		
+
         if (window.location.hash && $('#link-' + window.location.hash.replace(/^#/, '')).length) {
             $('#link-' + window.location.hash.replace(/^#/, '')).trigger('click');
         }
@@ -244,7 +244,7 @@
                 });
             }
         });
-		
+
 		/* ----------------------------------------------------------- */
         /*  BACK TO MAIN SECTION IN MOBILE
         /* ----------------------------------------------------------- */
@@ -252,9 +252,9 @@
         $('#back-mobile').on('click', function(e) {
             $('#main').removeClass('open');
 			stop_videos();
-        });	
-		
-		
+        });
+
+
 		/* ----------------------------------------------------------- */
         /*  PORTFOLIO SHOW SLIDE
         /* ----------------------------------------------------------- */
@@ -266,7 +266,7 @@
 			var selected_member = $(this).data('type');
 			$('.project-info-container.'+selected_member+'').addClass('slide-in');
 			$('.close-project').addClass('is-visible');
-			
+
 			// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
 			if( is_firefox ) {
 				$('.portfolio-container').addClass('slide-out').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
@@ -276,11 +276,11 @@
 				$('.portfolio-container').addClass('slide-out');
 				$('.portfolio-container').addClass('overflow-hidden');
 			}
-			
+
 			if ($(window).width() < 1025) {
 				$('#back-mobile').css('pointer-events','none');
 			}
-			
+
 
 		});
 
@@ -302,12 +302,12 @@
 				$('.portfolio-container').removeClass('slide-out');
 				$('.portfolio-container').removeClass('overflow-hidden');
 			}
-			
+
 			if ($(window).width() < 1025) {
 				$('#back-mobile').css('pointer-events','auto');
 			}
 		});
-		
+
 		/* ----------------------------------------------------------- */
         /*  SLIDER IN PORTFOLIO
         /* ----------------------------------------------------------- */
@@ -315,9 +315,9 @@
 			pause: true,
 			interval: false
 		});
-		
+
 	});
-	
+
     /* ----------------------------------------------------------- */
 
 })(jQuery);
